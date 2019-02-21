@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<meta charset="UTF-8"> 
+<html>
+<head>
+	<title>Puls3's Calculators</title>
+	<link rel="stylesheet" href="../res/index.css">
+	<link rel="stylesheet" href="res/calculators.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="res/calculators.js"></script>
+</head>
+<body>
+
+<div id="header-image"></div>
+
+<div id="header-holder">
+
+<div id="header-spacer"></div>
+
+<div id="header-block-holder">
+	<div id="header-block-name">Calculators</div>
+	<div id="header-block-description">A public resource provided by Puls3!</div>
+</div>
+
+</div>
+
+<div id="header">
+	<a id="hleft" href="https://etherealguild.github.io">Puls3</a>
+	<div id="linkholder">
+		<a href="http://xer0-puls3.github.io" class="link">Overview</a>
+		<a id="activelink" class="link">Calculators</a>
+	</div>
+</div>
+
+<div id="content">
+	<div class="section collapsed" id="DropRate-RhodiumIngots">
+		<div class="content-block-holder head">
+			<div class="content-block head">
+				<div class="content-header">Rhodium Ingot Drop Rate Calculator</div>
+			</div>
+		</div>
+		<div class="content-block content">
+			<p>Calculates how many actions on average it takes for one Rhodium Ingot to drop.</p>
+			<p>Created by Puls3, last updated on Febuary 17th of 2019.</p>
+			<div class="content-breaker"></div>
+		</div>
+		<div class="content-block content content-input">
+			<input id="DropRate-RhodiumIngots-Input-DropBoost" type="number" min="0" max="100" placeholder="Global Drop Boost Percent">
+			<input id="DropRate-RhodiumIngots-Input-WishingWell" type="number" min="0" placeholder="Guild Wishing Well Level">
+			<button onclick="CalculateDropRateRhodiumIngots()">Calculate</button>
+		</div>
+		<div class="content-block content content-return">
+			<div class="content-breaker"></div>
+			<div class="return">15,000 Spare Parts Required</div>
+			<div class="return-error">Invalid Input!</div>
+		</div>
+	</div>
+	
+	<div class="section collapsed" id="Cost-Guild-UpgradePointBoost">
+		<div class="content-block-holder head">
+			<div class="content-block head">
+				<div class="content-header">Upgrade Point Boost Gold Cost Calculator</div>
+			</div>
+		</div>
+		<div class="content-block content">
+			<p>Calculates the cost to get from your current Upgrade Point Boost to your wanted Upgrade Point Boost.</p>
+			<p>Created by Puls3, last updated on Febuary 21st of 2019.</p>
+			<div class="content-breaker"></div>
+		</div>
+		<div class="content-block content content-input">
+			<input id="Cost-Guild-UpgradePointBoost-Input-Current" type="number" min="0" placeholder="Current Upgrade Point Boost Percent">
+			<input id="Cost-Guild-UpgradePointBoost-Input-Wanted" type="number" min="5" placeholder="Wanted Upgrade Point Boost Percent">
+			<button onclick="CalculateCostGuildUpgradePointBoost()">Calculate</button>
+		</div>
+		<div class="content-block content content-return">
+			<div class="content-breaker"></div>
+			<div class="return one">15,000 Rhodium Required</div>
+			<div class="return two">15,000 Rhodium Required</div>
+			<div class="return three">15,000 Rhodium Required</div>
+			<div class="return four">15,000 Rhodium Required</div>
+			<div class="return five">15,000 Rhodium Required</div>
+			<div class="return six">15,000 Rhodium Required</div>
+			<div class="return seven">15,000 Rhodium Required</div>
+			<div class="return eight">15,000 Rhodium Required</div>
+			
+			<div class="return-error">Invalid Input!</div>
+		</div>
+	</div>
+
+	<div class="section collapsed" id="Cost-Rhodium-QuestBoost">
+		<div class="content-block-holder head">
+			<div class="content-block head">
+				<div class="content-header">Quest Boost Rhodium Cost Calculator</div>
+			</div>
+		</div>
+		<div class="content-block content">
+			<p>Calculates the cost to get from your current Quest Boost to your wanted Quest Boost.</p>
+			<p>Created by Puls3, last updated on Febuary 17th of 2019.</p>
+			<div class="content-breaker"></div>
+		</div>
+		<div class="content-block content content-input">
+			<input id="Cost-Rhodium-QuestBoost-Input-Current" type="number" min="0" max="79" placeholder="Current Quest Boost Percent">
+			<input id="Cost-Rhodium-QuestBoost-Input-Wanted" type="number" min="1" max="80" placeholder="Wanted Quest Boost Percent">
+			<button onclick="CalculateCostRhodiumQuestBoost('#Cost-Rhodium-QuestBoost')">Calculate</button>
+		</div>
+		<div class="content-block content content-return">
+			<div class="content-breaker"></div>
+			<div class="return">15,000 Rhodium Required</div>
+			<div class="return-error">Invalid Input!</div>
+		</div>
+	</div>
+	
+	<div class="section collapsed" id="Cost-Rhodium-GlobalExpBoost">
+		<div class="content-block-holder head">
+			<div class="content-block head">
+				<div class="content-header">Global Experience Boost Rhodium Cost Calculator</div>
+			</div>
+		</div>
+		<div class="content-block content">
+			<p>Calculates the cost in Rhodium to get from your current Global Experience Boost to your wanted Global Experience Boost.</p>
+			<p>Created by Puls3, last updated on Febuary 17th of 2019.</p>
+			<div class="content-breaker"></div>
+		</div>
+		<div class="content-block content content-input">
+			<input id="Cost-Rhodium-GlobalExpBoost-Input-Current" type="number" min="0" max="499" placeholder="Current Global Experience Boost Percent">
+			<input id="Cost-Rhodium-GlobalExpBoost-Input-Wanted" type="number" min="1" max="500" placeholder="Wanted Global Experience Boost Percent">
+			<button onclick="CalculateCostRhodiumGlobalExpBoost('#Cost-Rhodium-GlobalExpBoost')">Calculate</button>
+		</div>
+		<div class="content-block content content-return">
+			<div class="content-breaker"></div>
+			<div class="return">15,000 Rhodium Required</div>
+			<div class="return-error">Invalid Input!</div>
+		</div>
+	</div>
+	
+	<div class="section collapsed" id="Cost-Rhodium-GlobalDropBoost">
+		<div class="content-block-holder head">
+			<div class="content-block head">
+				<div class="content-header">Global Drop Boost Rhodium Cost Calculator</div>
+			</div>
+		</div>
+		<div class="content-block content">
+			<p>Calculates the cost in Rhodium to get from your current Global Drop Boost to your wanted Global Drop Boost.</p>
+			<p>Created by Puls3, last updated on Febuary 17th of 2019.</p>
+			<div class="content-breaker"></div>
+		</div>
+		<div class="content-block content content-input">
+			<input id="Cost-Rhodium-GlobalDropBoost-Input-Current" type="number" min="0" max="99" placeholder="Current Global Drop Boost Percent">
+			<input id="Cost-Rhodium-GlobalDropBoost-Input-Wanted" type="number" min="1" max="100" placeholder="Wanted Global Drop Boost Percent">
+			<button onclick="CalculateCostRhodiumQuestBoost('#Cost-Rhodium-GlobalDropBoost')">Calculate</button>
+		</div>
+		<div class="content-block content content-return">
+			<div class="content-breaker"></div>
+			<div class="return">15,000 Rhodium Required</div>
+			<div class="return-error">Invalid Input!</div>
+		</div>
+	</div>
+	
+	<div class="section collapsed" id="Cost-Rhodium-SparePartBoost">
+		<div class="content-block-holder head">
+			<div class="content-block head">
+				<div class="content-header">Spare Part Boost Rhodium Cost Calculator</div>
+			</div>
+		</div>
+		<div class="content-block content">
+			<p>Calculates the cost in Rhodium to get from your current Spare Part Boost to your wanted Spare Part Boost.</p>
+			<p>Created by Puls3, last updated on Febuary 17th of 2019.</p>
+			<div class="content-breaker"></div>
+		</div>
+		<div class="content-block content content-input">
+			<input id="Cost-Rhodium-SparePartBoost-Input-Current" type="number" min="0" max="99" placeholder="Current Spare Part Boost Percent">
+			<input id="Cost-Rhodium-SparePartBoost-Input-Wanted" type="number" min="1" max="100" placeholder="Wanted Spare Part Boost Percent">
+			<button onclick="CalculateCostRhodiumQuestBoost('#Cost-Rhodium-SparePartBoost')">Calculate</button>
+		</div>
+		<div class="content-block content content-return">
+			<div class="content-breaker"></div>
+			<div class="return">15,000 Rhodium Required</div>
+			<div class="return-error">Invalid Input!</div>
+		</div>
+	</div>
+	
+	<div class="section collapsed" id="Cost-SparePart-QuintChance">
+		<div class="content-block-holder head">
+			<div class="content-block head">
+				<div class="content-header">Quint Chance Spare Part Cost Calculator</div>
+			</div>
+		</div>
+		<div class="content-block content">
+			<p>Calculates the cost in Spare Parts to get from your current Quint Chance to your wanted Quint Chance.</p>
+			<p>Created by Puls3, last updated on Febuary 17th of 2019.</p>
+			<div class="content-breaker"></div>
+		</div>
+		<div class="content-block content content-input">
+			<input id="Cost-SparePart-QuintChance-Input-Current" type="number" min="0" step="0.1" placeholder="Current Quint Chance Percent">
+			<input id="Cost-SparePart-QuintChance-Input-Wanted" type="number" min="0.1" step="0.1" placeholder="Wanted Quint Chance Percent">
+			<input id="Cost-SparePart-QuintChance-Input-Scrapyard" type="number" min="0" placeholder="Current Scrapyard Level">
+			<button onclick="CalculateCostSparePartQuintChance()">Calculate</button>
+		</div>
+		<div class="content-block content content-return">
+			<div class="content-breaker"></div>
+			<div class="return">15,000 Spare Parts Required</div>
+			<div class="return-error">Invalid Input!</div>
+		</div>
+	</div>
+	
+	<div class="section collapsed" id="Cost-SparePart-ResourceBoost">
+		<div class="content-block-holder head">
+			<div class="content-block head">
+				<div class="content-header">Resource Boost Spare Part Cost Calculator</div>
+			</div>
+		</div>
+		<div class="content-block content">
+			<p>Calculates the cost in Spare Parts to get from your current Resource Boost to your wanted Resource Boost.</p>
+			<p>Created by Puls3, last updated on Febuary 17th of 2019.</p>
+			<div class="content-breaker"></div>
+		</div>
+		<div class="content-block content content-input">
+			<input id="Cost-SparePart-ResourceBoost-Input-Current" type="number" min="0" step="0.1" placeholder="Current Resource Boost Percent">
+			<input id="Cost-SparePart-ResourceBoost-Input-Wanted" type="number" min="0.1" step="0.1" placeholder="Wanted Resource Boost Percent">
+			<input id="Cost-SparePart-ResourceBoost-Input-Scrapyard" type="number" min="0" placeholder="Current Scrapyard Level">
+			<button onclick="CalculateCostSparePartResourceBoost()">Calculate</button>
+		</div>
+		<div class="content-block content content-return">
+			<div class="content-breaker"></div>
+			<div class="return">15,000 Spare Parts Required</div>
+			<div class="return-error">Invalid Input!</div>
+		</div>
+	</div>
+
+</div>
+</body>
+</html>
