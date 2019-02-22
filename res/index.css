@@ -14,27 +14,25 @@ body {
     display: none; 
 }
 
+#header-holder {
+	position: relative;
+	height: 360px;
+}
+
+#header-spacer {
+	height: 70px;
+}
+
 #header-image {
-	position: absolute;
+	position: fixed;
 	height: 360px;
 	width: 100vw;
-	background-image: url("WideBranded.png");
+	background-image: url("EtherealWall.png");
 	background-repeat: no-repeat;
 	background-position: center center; 
 	background-size: cover;
 	background-color: rgb(100,100,100);
 	z-index: -1;
-}
-
-#header-holder {
-	position: relative;
-	height: 360px;
-	width: 100vw;
-	z-index: -1;
-}
-
-#header-spacer {
-	height: 70px;
 }
 
 @-moz-document url-prefix() {
@@ -136,10 +134,6 @@ button {
 	outline: none !important;
 }
 
-button::-moz-focus-inner {
-	border: 0;
-}
-
 .content-block {
 	width: 100%;
 }
@@ -205,7 +199,7 @@ button::-moz-focus-inner {
 	margin-top: 20px;
 }
 
-.content-block.content button:hover, .content-block.content button:focus {
+.content-block.content button:hover {
 	background-color: rgb(132, 142, 151);
 }
 
@@ -214,7 +208,7 @@ button::-moz-focus-inner {
 	font-size: 2.662vw;
 	margin-left: 3.876vw;
 	max-height: 999999px;
-	color: black;
+	color: rgba(117,117,117,1);
 }
 
 .content-block ul {
