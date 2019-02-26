@@ -1,0 +1,78 @@
+fieldset {
+	position: relative;
+    text-align: center;
+    width: 520px;
+    background-color:rgba(20, 20, 20, 0.7);
+    margin-top: 10px;
+    margin-left: 5px;
+    margin-right: 5px;
+    color: gray;
+    float: left;
+}
+legend {
+	font-weight: bold;
+	color: white;
+	border-width: 1px;
+    border-style: solid;
+    background-color:rgba(20, 20, 20, 1);
+}
+.desc {
+	font-style: italic;
+	color:rgba(220, 220, 220, 1);
+}
+#guilds {
+	position: relative;
+	top: 90px;
+	width: 1674px;
+	height: auto;
+	margin-left: auto;
+	margin-right: auto;
+    overflow: hidden;
+    padding-bottom: 10px;
+    margin-bottom: 30px;
+}
+.good {
+	color: rgb(0, 131, 30)
+}
+
+#last {
+    color: white;
+    font-family: 'Segoe UI';
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 20px;
+    text-align: right;
+    position: absolute;
+}
+@media screen and (min-width: 1130px) and (max-width: 1700px) {
+	fieldset {
+		width: 520px;
+		max-width: 520px;
+    	margin-left: auto;
+    	margin-right: auto;
+    	float: left;
+	}
+	#guilds {
+		position: relative;
+		width: 1100px;
+		margin-left: auto;
+		margin-right: auto;
+	}
+}
+@media screen and (max-width: 1130px) {
+	fieldset {
+		width: 90%;
+    	margin-left: auto;
+    	margin-right: auto;
+    	float: none;
+    	font-size: 35px;
+	}
+	#guilds {
+		position: relative;
+		width: 100%;
+	}
+	#last {
+		display: none;
+	}
+}

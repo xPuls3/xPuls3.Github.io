@@ -1,0 +1,100 @@
+/* This logo format was created by Puls3 and can be used by others if given proper credit! */
+div.iconbar {
+    color: white;
+    font-family: 'Segoe UI';
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    width: 90px;
+    height: 90px;
+    border-width: 2px;
+    border-style: solid;
+    border-radius: 8px;
+    background-color:rgba(20, 20, 20, 0.5);
+}
+
+.header {
+    color: white;
+    font-family: 'Segoe UI';
+    position: absolute;
+    top: 10px;
+    left: 90px;
+    line-height: 65px;
+    font-size: 40px;
+    width: 240px;
+    height: 70px;
+    border-width: 1px;
+    border-style: solid;
+    text-align: center;
+    background-color:rgba(20, 20, 20, 0.4);
+}
+
+img.icon {
+    color: white;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
+
+.linksection {
+    color: white;
+    font-family: 'Segoe UI';
+    position: absolute;
+    top: 10px;
+    left: 390px;
+    line-height: 65px;
+    font-size: 40px;
+    top: 15px;
+    width: 80%
+    overflow: hidden;
+    height: 70px;
+    text-align: center;
+}
+
+.link {
+    color: white;
+    font-family: 'Segoe UI';
+    float: left;
+    line-height: 65px;
+    font-size: 40px;
+    width: auto;
+    padding-left: 30px;
+    padding-right: 30px;
+    color:rgba(150, 150, 150, 0.8);
+    text-decoration:none
+}
+
+.spacer {
+    position: relative;
+    top; 100px;
+    left; 0%;
+    height: 100px;
+    width: 0%;
+}
+
+#activelink {
+	color:rgba(170, 170, 170, 1);
+}
+
+.link:hover {
+	color:rgba(120, 120, 120, 1);
+}
+
+@media screen and (max-width: 1090px) {
+	.linksection {
+		left: 0px;
+    	margin-left: auto;
+    	margin-right: auto;
+    	position: relative;
+    	top: 90px;
+    	width: 92%
+    	border-width: 1px;
+    	border-style: solid;
+    	margin-top: 20px;
+    	margin-bottom: 20px;
+	}
+
+	.link {
+    	float: none;
+	}
+}
