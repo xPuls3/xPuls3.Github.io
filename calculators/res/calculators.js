@@ -2,15 +2,15 @@
 $(document).ready(Origin);
 
 function Origin() {
-	//Collapser
+	// Collapser
 	$(".section .content-block-holder.head").on('click',function(){
 		$(this).parent().toggleClass("collapsed");
 	});
 }
 
-//Quest Boost
-//Global Drop Boost
-//Spare Part Boost
+// Quest Boost
+// Global Drop Boost
+// Spare Part Boost
 function CalculateCostRhodiumQuestBoost(i) {
 	$(i + " .content-return .return").hide()
 	$(i + " .content-return .return-error").hide()
@@ -37,7 +37,7 @@ function CalculateCostRhodiumQuestBoost(i) {
 	$(i + " .content-return .return").show()
 }
 
-//Global Exp Boost
+// Global Exp Boost
 function CalculateCostRhodiumGlobalExpBoost(i) {
 	$(i + " .content-return .return").hide()
 	$(i + " .content-return .return-error").hide()
@@ -65,7 +65,110 @@ function CalculateCostRhodiumGlobalExpBoost(i) {
 	$(i + " .content-return .return").show()
 }
 
-//Quint Chance
+// Quint Chance
+function CalculateCostSparePartQuintChance() {
+	$("#Cost-SparePart-QuintChance .content-return .return").hide()
+	$("#Cost-SparePart-QuintChance .content-return .return-error").hide()
+	if ( $("#Cost-SparePart-QuintChance-Input-Current").val() == '' || $("#Cost-SparePart-QuintChance-Input-Wanted").val() == '' || $("#Cost-SparePart-QuintChance-Input-Scrapyard").val() == '' ) {
+		return ReturnError("#Cost-SparePart-QuintChance","Empty values!");
+	}
+	var Current = unDo( $("#Cost-SparePart-QuintChance-Input-Current").val() );
+	var Wanted = unDo( $("#Cost-SparePart-QuintChance-Input-Wanted").val() );
+	var Scrapyard = unDo( $("#Cost-SparePart-QuintChance-Input-Scrapyard").val() );
+	if (Current.length == 0 || Wanted.length == 0 || Scrapyard.length == 0) {
+		return ReturnError("#Cost-SparePart-QuintChance","Improper Lengths!!");
+	}
+	if (! isNumber(Current) && isNumber(Wanted) && isNumber(Scrapyard) ) {
+		return ReturnError("#Cost-SparePart-QuintChance","Invalid values!");
+	}
+	Current = Number(Current);
+	Wanted = Number(Wanted);
+	Scrapyard = Number(Scrapyard);
+	Scrapyard = Math.pow(0.99,Scrapyard);
+	var Result = 0;
+	Current *= 10;
+	Wanted *= 10;
+	Wanted = (Wanted - Current);
+	Result = Math.round(((spBaseCost(Current+Wanted,15)+spCostGrowthModifierSum(Current+Wanted,"Quint"))-(spBaseCost(Current,15)+spCostGrowthModifierSum(Current,"Quint")))*Scrapyard);
+	$("#Cost-SparePart-QuintChance .content-return").show();
+	$("#Cost-SparePart-QuintChance .content-return .return").text(Comma(Result) + " Spare Parts Required");
+	$("#Cost-SparePart-QuintChance .content-return .return").show();
+}
+
+function spCostGrowthModifierSum(amount, type){
+	var tmpAmount = amount;
+	var tmpGrowth = 0.01;
+	if(type == "Quint"){
+		tmpGrowth = 0.02;
+	}
+	if(type == "Satchel"){
+		tmpGrowth = 1; 
+	}
+	if(type != "Satchel"){
+		var growthModifierSum = ((Math.pow(amount,3)/3)+Math.pow(amount,2)+(amount*2/3))*tmpGrowth/2;
+	} else {
+		var growthModifierSum = 0;
+	}
+	var tmpAmountThousands = 1;
+	var increasedGrowth = 0;
+
+	while (tmpAmount > 1000) {
+	var addedGrowth = ((Math.pow((amount-(tmpAmountThousands*1000)),3)*1/3)+Math.pow((amount-(tmpAmountThousands*1000)),2)+((amount-(tmpAmountThousands*1000))*2/3)) * tmpGrowth/2;
+
+	if(type == "Satchel"){
+		addedGrowth *=50;
+	}
+
+	tmpAmount -= 1000;
+	tmpGrowth *= 2;
+	tmpAmountThousands++;
+
+	increasedGrowth += addedGrowth;
+	}
+
+	growthModifierSum += increasedGrowth;
+	return growthModifierSum;
+  
+}
+
+function spBaseCost(level, costPerLevel){
+	return (level * (level + 1) / 2) * costPerLevel;
+};
+
+// Resource Boost
+function CalculateCostSparePartResourceBoost() {
+	$("#Cost-SparePart-ResourceBoost .content-return .return").hide()
+	$("#Cost-SparePart-ResourceBoost .content-return .return-error").hide()
+	if ( $("#Cost-SparePart-ResourceBoost-Input-Current").val() == '' || $("#Cost-SparePart-ResourceBoost-Input-Wanted").val() == '' || $("#Cost-SparePart-ResourceBoost-Input-Scrapyard").val() == '' ) {
+		return ReturnError("#Cost-SparePart-ResourceBoost","Empty values!");
+	}
+	var Current = unDo( $("#Cost-SparePart-ResourceBoost-Input-Current").val() );
+	var Wanted = unDo( $("#Cost-SparePart-ResourceBoost-Input-Wanted").val() );
+	var Scrapyard = unDo( $("#Cost-SparePart-ResourceBoost-Input-Scrapyard").val() );
+	var Result = 0;
+	if (Current.length == 0 || Wanted.length == 0 || Scrapyard.length == 0) {
+		return ReturnError("#Cost-SparePart-ResourceBoost","Improper Lengths!!");
+	}
+	if (! isNumber(Current) && isNumber(Wanted) && isNumber(Scrapyard) ) {
+		return ReturnError("#Cost-SparePart-ResourceBoost","Invalid values!");
+	}
+	Current = Number(Current);
+	Wanted = Number(Wanted);
+	Scrapyard = Number(Scrapyard);
+	Scrapyard = Math.pow(0.99,Scrapyard);
+	var Result = 0;
+	Current *= 10;
+	Wanted *= 10;
+	Wanted = (Wanted - Current);
+	Result = Math.round(((spBaseCost(Current+Wanted,8)+spCostGrowthModifierSum(Current+Wanted,""))-(spBaseCost(Current,8)+spCostGrowthModifierSum(Current,"")))*Scrapyard);
+	$("#Cost-SparePart-ResourceBoost .content-return").show()
+	$("#Cost-SparePart-ResourceBoost .content-return .return").text(Comma(Result) + " Spare Parts Required")
+	$("#Cost-SparePart-ResourceBoost .content-return .return").show()
+}
+
+/*
+
+// ORIGINAL QUINT CHANCE
 function CalculateCostSparePartQuintChance() {
 	$("#Cost-SparePart-QuintChance .content-return .return").hide()
 	$("#Cost-SparePart-QuintChance .content-return .return-error").hide()
@@ -95,11 +198,7 @@ function CalculateCostSparePartQuintChance() {
 	$("#Cost-SparePart-QuintChance .content-return .return").show()
 }
 
-//ORIGINAL QUINT
-//Old math for the old quint made by Zampa
-//Math.round(Math.pow(0.99,Scrapyard) * Current * 20);
-
-//Resource Boost
+// ORIGINAL RESOURCE BOOST
 function CalculateCostSparePartResourceBoost() {
 	$("#Cost-SparePart-ResourceBoost .content-return .return").hide()
 	$("#Cost-SparePart-ResourceBoost .content-return .return-error").hide()
@@ -132,7 +231,9 @@ function CalculateCostSparePartResourceBoost() {
 	$("#Cost-SparePart-ResourceBoost .content-return .return").show()
 }
 
-//Ingot Drop Rate
+*/
+
+// Ingot Drop Rate
 function CalculateDropRateRhodiumIngots() {
 	$("#DropRate-RhodiumIngots .content-return .return").hide()
 	$("#DropRate-RhodiumIngots .content-return .return-error").hide()
@@ -159,7 +260,7 @@ function CalculateDropRateRhodiumIngots() {
 	$("#DropRate-RhodiumIngots .content-return .return").show()
 }
 
-//Upgrade Point Boost
+// Upgrade Point Boost
 function CalculateCostGuildUpgradePointBoost() {
 	$("#Cost-Guild-UpgradePointBoost .content-return .return").hide()
 	$("#Cost-Guild-UpgradePointBoost .content-return .return-error").hide()
