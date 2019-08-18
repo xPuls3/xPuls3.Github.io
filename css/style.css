@@ -1,0 +1,54 @@
+
+body {
+    background-color: #464850;
+    color: #ffffff;
+    display: grid;
+    padding: 0;
+    margin: 0;
+}
+
+#header {
+    font-family: 'Metal Mania', cursive;
+    text-align: center;
+    font-size: 60px;
+    color: #0094ff;
+    background-color: #2c2f37;
+    padding: 10px 50px;
+}
+
+#content {
+    font-family: 'Quicksand', sans-serif;
+}
+
+#footer {
+    font-family: 'Quicksand', sans-serif;
+}
+
+#content > .section > .header {
+    background-color: #40434b;
+    border-top: solid 2px black;
+    border-bottom: solid 2px black;
+}
+
+#content > .section > .header > .text {
+    font-size: 26px;
+    padding: 25px 50px 50px 50px;
+}
+
+#content > .section > .header > .description {
+    font-size: 16px;
+    padding: 0 50px 15px;
+}
+
+#content > .section > .under > * {
+    padding: 0 50px 15px;
+}
+
+.list {
+    list-style-type: square;
+}
+
+.list > li {
+    padding-top: 15px;
+    margin-left: 20px;
+}

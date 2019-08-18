@@ -1,0 +1,29 @@
+
+#header {
+    font-size: 48px;
+}
+
+#header {
+    border-bottom: solid 2px black;
+}
+
+#content > .listing {
+    background-color: #40434b;
+    padding: 10px 50px 10px 50px;
+    border-bottom: solid 1px black;
+}
+
+#content > .listing > .header {
+    font-size: 26px;
+}
+
+#content ul {
+    list-style-type: square;
+    padding: 0;
+    margin: 0 0 0 15px;
+}
+
+#footer {
+    padding: 20px;
+    text-align: center;
+}
