@@ -1,67 +1,92 @@
 <!DOCTYPE html>
-<meta charset="UTF-8"> 
-<html>
+<html lang="en">
 <head>
-	<title>Puls3</title>
-	<link rel="stylesheet" href="res/index.css">
-	<base href="https://xpuls3.github.io/">
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-	<script src="res/index.js"></script> 
+    <meta charset="UTF-8">
+    <title>Ethereal</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="js/basic.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Rajdhani&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Quicksand&display=swap" rel="stylesheet">
+    <link href="./css/style.css" rel="stylesheet" type="text/css">
 </head>
 <body>
 
-<div id="header-image"></div>
-
-<div id="header-holder">
-
-<div id="header-spacer"></div>
-
-<div id="header-block-holder">
-	<div id="header-block-name">Puls3</div>
-	<div id="header-block-description">The Infamous Impulsive Puls3!</div>
-</div>
-
-</div>
-
 <div id="header">
-	<a id="hleft">Puls3</a>
-	<div id="linkholder">
-		<a id="activelink" class="link">Overview</a>
-		<a href="/calculators" class="link">Calculators</a>
-	</div>
+    <img class="icon link" onclick="redirect()" src="images/logo.png" alt="Pulse Icon"/>
+    <div class="text link" onclick="redirect()">Puls3</div>
+</div>
+
+<div id="panel">
+    <div class="container">
+        <div class="text">Puls3</div>
+        <div class="description">The Infamous Impulsive Puls3!</div>
+    </div>
 </div>
 
 <div id="content">
-	<div class="section">
-		<div class="content-block-holder head">
-			<div class="content-block head">
-				<div class="content-header">This site is getting a rewrite!</div>
-				<div class="content-description">Soon this will have links to all of my creations!</div>
-				<div class="content-breaker"></div>
-			</div>
-		</div>
-	</div>
-	<div class="section">
-		<div class="content-block-holder head">
-			<div class="content-block head">
-				<div class="content-header">Who am I?</div>
-				<div class="content-description">Seriously? How do you not know who I am?</div>
-				<div class="content-breaker"></div>
-			</div>
-		</div>
-		<div class="content-block content">
-			<ul>
-				<li>I'm one of the top Miners on Pendoria!</li>
-				<li>I'm the creator and leader of one of the top TS guilds on Pendoria, Ethereal!</li>
-				<li>I'm the creator of quite a few calculators, which have been added to this site!</li>
-				<li>I'm the creator of The Pendorian Elite UI!.</li>
-				<li>I'm an Official Tester for Pendoria!</li>
-				<li>I'm the best pick head creator on Talibri!</li>
-			</ul>
-		</div>
-	</div>
-	<div class="spacer"></div>
+    <div class="section">
+        <div class="header">
+            <div class="text">
+                Pendorian Elite UI
+            </div>
+        </div>
+        <div class="under">
+            <ul>
+                <li>
+                    Changes a large portion of Pendoria's text and UI to 'Elite' blue and makes small changes to the UI.
+                </li>
+            </ul>
+            <a href="https://github.com/xPuls3/Pendorian-Elite-UI" target="_blank">Check out Pendorian Elite UI</a>
+        </div>
+    </div>
+    <div class="section">
+        <div class="header">
+            <div class="text">
+                Impulsive Updates
+            </div>
+        </div>
+        <div class="under">
+            <ul>
+                <li>
+                    This is an informative collection of what I deem important about selective games.
+                </li>
+            </ul>
+            <a href="https://xpuls3.github.io/blog/" target="_blank">Check out Impulsive Updates</a>
+        </div>
+    </div>
+    <div class="section">
+        <div class="header">
+            <div class="text">
+                Puls3's Calculators
+            </div>
+        </div>
+        <div class="under">
+            <ul>
+                <li>
+                    A public resource provided by Puls3! This contains many Pendoria Calculators!
+                </li>
+            </ul>
+            <a href="https://xpuls3.github.io/calculators/" target="_blank">Check out Puls3's Calculators</a>
+        </div>
+    </div>
+    <div class="section">
+        <div class="header">
+            <div class="text">
+                Puls3's Flipper Database
+            </div>
+        </div>
+        <div class="under">
+            <ul>
+                <li>
+                    A public listing of all known flippers in Pendoria!
+                </li>
+            </ul>
+            <a href="https://xpuls3.github.io/calculators/" target="_blank">Check out Puls3's Flipper Database</a>
+        </div>
+    </div>
 </div>
+
+<div id="footer"></div>
 
 </body>
 </html>
