@@ -34,7 +34,7 @@ body {
     font-size: 72px;
     font-weight: 300;
     color: white;
-    background: #5b606c url("./images/back.jpg") center center;
+    background: #5b606c url("./../images/back.jpg") center center;
     padding: 30px;
     border-bottom: solid 2px black;
 }
