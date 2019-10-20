@@ -110,7 +110,7 @@ a {
     cursor: pointer;
 }
 
-.section > .under > a {
+.linkButton {
     display: inline-block;
     text-decoration: none;
     margin: 30px 0 20px;
@@ -124,11 +124,11 @@ a {
     color: white;
 }
 
-.section > .under > a:hover {
+.linkButton:hover {
     background-color: #4a4e57;
 }
 
-.section > .under > a:active {
+.linkButton:active {
     background-color: #60646d;
 }
 
