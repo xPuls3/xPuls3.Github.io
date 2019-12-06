@@ -6,3 +6,5 @@ This entire site was written from the ground up starting with nothing but blank 
 
 Edit: Recently I've started to use an image that I did not create on my site;
 <br>\- [*Stellar Collision* by KuldarLeement](https://www.deviantart.com/kuldarleement/art/Stellar-collision-397866757)
+
+I've credited his work as he requested within his copyright notice, he retains all rights to the image.
