@@ -28,11 +28,11 @@ function addEntry(username, id, date) {
     newListing[3].appendChild(newListing[4]);
 
     newListing[5] = document.createElement('li');
-    newListing[5].appendChild(document.createTextNode("AKA: " + date));
+    newListing[5].appendChild(document.createTextNode("AKA: " + aka));
     newListing[3].appendChild(newListing[5]);
 
     newListing[0].appendChild(newListing[3]);
-    document.getElementById("content").appendChild(newListing[0])
+    document.getElementById("content").appendChild(newListing[0]);
 
 }
 
