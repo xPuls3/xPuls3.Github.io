@@ -9,7 +9,7 @@ const list = [
     {
         username: "2JTR",
         id: 5028,
-		aka "2JTR"
+		aka: "2JTR"
     },
 	
     {
@@ -21,49 +21,49 @@ const list = [
     {
         username: "4JTR",
         id: 287,
-		aka "Yuno"
+		aka: "Yuno"
     },
 	
     {
         username: "5JTR",
         id: 5678,
-		aka "Starcrater"
+		aka: "Starcrater"
     },
 	
     {
         username: "6JTR",
         id: 5831,
-		aka "GodMode"
+		aka: "GodMode"
     },
 	
     {
         username: "7JTR",
         id: 5430,
-		aka "Supernose"
+		aka: "Supernose"
     },
 	
     {
         username: "8JTR",
         id: 2256,
-		aka "Damien"
+		aka: "Damien"
     },
 	
     {
         username: "9JTR",
         id: 289,
-		aka "Nuts"
+		aka: "Nuts"
     },
 	
     {
         username: "10JTR",
         id: 4081,
-		aka "Chameleon"
+		aka: "Chameleon"
     },
 	
     {
         username: "69JTR",
         id: 60,
-		aka "Silent"
+		aka: "Silent"
     },
 
 ];
