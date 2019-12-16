@@ -1,11 +1,11 @@
 
 document.addEventListener('DOMContentLoaded', function() {
     for (let i = 0; i < list.length; i++) {
-        addEntry(list[i].username, list[i].id, list[i].date);
+        addEntry(list[i].username, list[i].id, list[i].aka);
     }
 });
 
-function addEntry(username, id, date) {
+function addEntry(username, id, aka) {
 
     let newListing = [];
 
