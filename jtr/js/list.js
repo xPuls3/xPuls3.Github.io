@@ -65,5 +65,11 @@ const list = [
         id: 60,
 		aka: "Silent"
     },
+	
+    {
+        username: "69420JTR",
+        id: 1752,
+		aka: "Shniper"
+    },
 
 ];
