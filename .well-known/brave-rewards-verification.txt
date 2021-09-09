@@ -1,0 +1,4 @@
+This is a Brave Rewards publisher verification file.
+
+Domain: xpuls3.github.io
+Token: a0e910e3dfcb4914a8952a81bf630d0269153ea137158f7f770d661d39fd4d03
